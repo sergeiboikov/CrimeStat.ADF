@@ -6,6 +6,10 @@
 				"name": "Execute Source-Country-Load-Staging",
 				"type": "ExecutePipeline",
 				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Source-Country-Load-Staging",
+						"type": "PipelineReference"
+					},
 					"waitOnCompletion": true
 				}
 			}
