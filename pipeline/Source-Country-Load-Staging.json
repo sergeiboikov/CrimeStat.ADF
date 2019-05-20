@@ -46,8 +46,8 @@
 						"mappings": [
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 1
+									"name": "name",
+									"type": "String"
 								},
 								"sink": {
 									"name": "name",
@@ -56,8 +56,8 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 2
+									"name": "alpha-2",
+									"type": "String"
 								},
 								"sink": {
 									"name": "alpha-2",
@@ -66,8 +66,8 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 3
+									"name": "alpha-3",
+									"type": "String"
 								},
 								"sink": {
 									"name": "alpha-3",
@@ -76,8 +76,8 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 4
+									"name": "country-code",
+									"type": "String"
 								},
 								"sink": {
 									"name": "country-code",
@@ -86,8 +86,8 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 5
+									"name": "iso_3166-2",
+									"type": "String"
 								},
 								"sink": {
 									"name": "iso_3166-2",
@@ -96,8 +96,8 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 6
+									"name": "region",
+									"type": "String"
 								},
 								"sink": {
 									"name": "region",
@@ -106,8 +106,8 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 7
+									"name": "sub-region",
+									"type": "String"
 								},
 								"sink": {
 									"name": "sub-region",
@@ -116,8 +116,8 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 8
+									"name": "intermediate-region",
+									"type": "String"
 								},
 								"sink": {
 									"name": "intermediate-region",
@@ -126,8 +126,8 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 9
+									"name": "region-code",
+									"type": "String"
 								},
 								"sink": {
 									"name": "region-code",
@@ -136,8 +136,8 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 10
+									"name": "sub-region-code",
+									"type": "String"
 								},
 								"sink": {
 									"name": "sub-region-code",
@@ -146,8 +146,8 @@
 							},
 							{
 								"source": {
-									"type": "String",
-									"ordinal": 11
+									"name": "intermediate-region-code",
+									"type": "String"
 								},
 								"sink": {
 									"name": "intermediate-region-code",
