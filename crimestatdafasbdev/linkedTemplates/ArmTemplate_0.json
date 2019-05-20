@@ -49,7 +49,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DestinationDataset_yh2')]",
+			"name": "[concat(parameters('factoryName'), '/dataset_dst_Country_untyped')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -166,7 +166,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SourceDataset_yh2')]",
+			"name": "[concat(parameters('factoryName'), '/dataset_src_country')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -185,41 +185,52 @@
 					},
 					"columnDelimiter": ",",
 					"escapeChar": "\\",
-					"firstRowAsHeader": false,
+					"firstRowAsHeader": true,
 					"quoteChar": "\""
 				},
 				"schema": [
 					{
+						"name": "name",
 						"type": "String"
 					},
 					{
+						"name": "alpha-2",
 						"type": "String"
 					},
 					{
+						"name": "alpha-3",
 						"type": "String"
 					},
 					{
+						"name": "country-code",
 						"type": "String"
 					},
 					{
+						"name": "iso_3166-2",
 						"type": "String"
 					},
 					{
+						"name": "region",
 						"type": "String"
 					},
 					{
+						"name": "sub-region",
 						"type": "String"
 					},
 					{
+						"name": "intermediate-region",
 						"type": "String"
 					},
 					{
+						"name": "region-code",
 						"type": "String"
 					},
 					{
+						"name": "sub-region-code",
 						"type": "String"
 					},
 					{
+						"name": "intermediate-region-code",
 						"type": "String"
 					}
 				]
@@ -236,7 +247,8 @@
 				"description": "Load Country data from file to staging",
 				"activities": [
 					{
-						"name": "Copy_yh2",
+						"name": "copy-country-staging",
+						"description": "Copy data from source to staging",
 						"type": "Copy",
 						"dependsOn": [],
 						"policy": {
@@ -269,7 +281,8 @@
 								}
 							},
 							"sink": {
-								"type": "AzureSqlSink"
+								"type": "AzureSqlSink",
+								"preCopyScript": "TRUNCATE [staging].[Country_untyped];"
 							},
 							"enableStaging": false,
 							"translator": {
@@ -277,8 +290,8 @@
 								"mappings": [
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 1
+											"name": "name",
+											"type": "String"
 										},
 										"sink": {
 											"name": "name",
@@ -287,8 +300,8 @@
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 2
+											"name": "alpha-2",
+											"type": "String"
 										},
 										"sink": {
 											"name": "alpha-2",
@@ -297,8 +310,8 @@
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 3
+											"name": "alpha-3",
+											"type": "String"
 										},
 										"sink": {
 											"name": "alpha-3",
@@ -307,8 +320,8 @@
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 4
+											"name": "country-code",
+											"type": "String"
 										},
 										"sink": {
 											"name": "country-code",
@@ -317,8 +330,8 @@
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 5
+											"name": "iso_3166-2",
+											"type": "String"
 										},
 										"sink": {
 											"name": "iso_3166-2",
@@ -327,8 +340,8 @@
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 6
+											"name": "region",
+											"type": "String"
 										},
 										"sink": {
 											"name": "region",
@@ -337,8 +350,8 @@
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 7
+											"name": "sub-region",
+											"type": "String"
 										},
 										"sink": {
 											"name": "sub-region",
@@ -347,8 +360,8 @@
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 8
+											"name": "intermediate-region",
+											"type": "String"
 										},
 										"sink": {
 											"name": "intermediate-region",
@@ -357,8 +370,8 @@
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 9
+											"name": "region-code",
+											"type": "String"
 										},
 										"sink": {
 											"name": "region-code",
@@ -367,8 +380,8 @@
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 10
+											"name": "sub-region-code",
+											"type": "String"
 										},
 										"sink": {
 											"name": "sub-region-code",
@@ -377,8 +390,8 @@
 									},
 									{
 										"source": {
-											"type": "String",
-											"ordinal": 11
+											"name": "intermediate-region-code",
+											"type": "String"
 										},
 										"sink": {
 											"name": "intermediate-region-code",
@@ -390,14 +403,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "SourceDataset_yh2",
+								"referenceName": "dataset_src_country",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "DestinationDataset_yh2",
+								"referenceName": "dataset_dst_Country_untyped",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -407,8 +420,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_yh2')]",
-				"[concat(variables('factoryId'), '/datasets/DestinationDataset_yh2')]"
+				"[concat(variables('factoryId'), '/datasets/dataset_src_country')]",
+				"[concat(variables('factoryId'), '/datasets/dataset_dst_Country_untyped')]"
 			]
 		}
 	]

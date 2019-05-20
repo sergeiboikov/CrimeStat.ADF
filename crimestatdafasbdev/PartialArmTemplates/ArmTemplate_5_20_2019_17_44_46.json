@@ -6,14 +6,6 @@
 			"type": "string",
 			"metadata": "Data Factory Name",
 			"defaultValue": "crimestatdafasbdev"
-		},
-		"crimestatdwhlinkedservice_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'crimestatdwhlinkedservice'"
-		},
-		"crimestatstacsblinkedservice_connectionString": {
-			"type": "secureString",
-			"metadata": "Secure string for 'connectionString' of 'crimestatstacsblinkedservice'"
 		}
 	},
 	"variables": {
@@ -31,7 +23,6 @@
 						"name": "copy-country-staging",
 						"description": "Copy data from source to staging",
 						"type": "Copy",
-						"dependsOn": [],
 						"policy": {
 							"timeout": "7.00:00:00",
 							"retry": 0,
@@ -185,20 +176,17 @@
 						"inputs": [
 							{
 								"referenceName": "dataset_src_country",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						],
 						"outputs": [
 							{
 								"referenceName": "dataset_dst_Country_untyped",
-								"type": "DatasetReference",
-								"parameters": {}
+								"type": "DatasetReference"
 							}
 						]
 					}
-				],
-				"annotations": []
+				]
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/dataset_src_country')]",
@@ -214,7 +202,6 @@
 					"referenceName": "crimestatdwhlinkedservice",
 					"type": "LinkedServiceReference"
 				},
-				"annotations": [],
 				"type": "AzureSqlTable",
 				"schema": [
 					{
@@ -317,10 +304,7 @@
 				"typeProperties": {
 					"tableName": "[[staging].[Country_untyped]"
 				}
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/crimestatdwhlinkedservice')]"
-			]
+			}
 		},
 		{
 			"name": "[concat(parameters('factoryName'), '/dataset_src_country')]",
@@ -331,7 +315,6 @@
 					"referenceName": "crimestatstacsblinkedservice",
 					"type": "LinkedServiceReference"
 				},
-				"annotations": [],
 				"type": "DelimitedText",
 				"typeProperties": {
 					"location": {
@@ -391,38 +374,7 @@
 						"type": "String"
 					}
 				]
-			},
-			"dependsOn": [
-				"[concat(variables('factoryId'), '/linkedServices/crimestatstacsblinkedservice')]"
-			]
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/crimestatdwhlinkedservice')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Linked Service for the CrimeStatDWH database",
-				"annotations": [],
-				"type": "AzureSqlDatabase",
-				"typeProperties": {
-					"connectionString": "[parameters('crimestatdwhlinkedservice_connectionString')]"
-				}
-			},
-			"dependsOn": []
-		},
-		{
-			"name": "[concat(parameters('factoryName'), '/crimestatstacsblinkedservice')]",
-			"type": "Microsoft.DataFactory/factories/linkedServices",
-			"apiVersion": "2018-06-01",
-			"properties": {
-				"description": "Linked service for the CrimeStat storage account",
-				"annotations": [],
-				"type": "AzureBlobStorage",
-				"typeProperties": {
-					"connectionString": "[parameters('crimestatstacsblinkedservice_connectionString')]"
-				}
-			},
-			"dependsOn": []
+			}
 		}
 	]
 }
