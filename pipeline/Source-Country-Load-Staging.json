@@ -164,7 +164,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_yh2",
+						"referenceName": "dataset_dst_Country_untyped",
 						"type": "DatasetReference"
 					}
 				]
