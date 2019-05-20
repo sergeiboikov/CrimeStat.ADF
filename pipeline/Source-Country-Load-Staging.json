@@ -1,5 +1,5 @@
 {
-	"name": "Source-Country-Load-Staging1",
+	"name": "Source-Country-Load-Staging",
 	"properties": {
 		"description": "Load Country data from file to staging",
 		"activities": [
@@ -157,13 +157,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_yh21",
+						"referenceName": "SourceDataset_yh2",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_yh21",
+						"referenceName": "DestinationDataset_yh2",
 						"type": "DatasetReference"
 					}
 				]
