@@ -4,7 +4,8 @@
 		"description": "Load Country data from file to staging",
 		"activities": [
 			{
-				"name": "Copy_yh2",
+				"name": "copy-country-staging",
+				"description": "Copy data from source to staging",
 				"type": "Copy",
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -157,7 +158,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "SourceDataset_yh2",
+						"referenceName": "dataset_src_country",
 						"type": "DatasetReference"
 					}
 				],
