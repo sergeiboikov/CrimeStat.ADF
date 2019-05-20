@@ -49,7 +49,7 @@
 			"dependsOn": []
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/DestinationDataset_yh21')]",
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_yh2')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -166,7 +166,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/SourceDataset_yh21')]",
+			"name": "[concat(parameters('factoryName'), '/SourceDataset_yh2')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -229,7 +229,7 @@
 			]
 		},
 		{
-			"name": "[concat(parameters('factoryName'), '/Source-Country-Load-Staging1')]",
+			"name": "[concat(parameters('factoryName'), '/Source-Country-Load-Staging')]",
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
@@ -390,14 +390,14 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "SourceDataset_yh21",
+								"referenceName": "SourceDataset_yh2",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
 						],
 						"outputs": [
 							{
-								"referenceName": "DestinationDataset_yh21",
+								"referenceName": "DestinationDataset_yh2",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -407,8 +407,8 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/SourceDataset_yh21')]",
-				"[concat(variables('factoryId'), '/datasets/DestinationDataset_yh21')]"
+				"[concat(variables('factoryId'), '/datasets/SourceDataset_yh2')]",
+				"[concat(variables('factoryId'), '/datasets/DestinationDataset_yh2')]"
 			]
 		}
 	]
