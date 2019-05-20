@@ -1,0 +1,14 @@
+{
+	"name": "CrimeStat-Load",
+	"properties": {
+		"activities": [
+			{
+				"name": "Execute Source-Country-Load-Staging",
+				"type": "ExecutePipeline",
+				"typeProperties": {
+					"waitOnCompletion": true
+				}
+			}
+		]
+	}
+}
