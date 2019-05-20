@@ -1,0 +1,111 @@
+{
+	"name": "DestinationDataset_yh21",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "crimestatdwhlinkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "name",
+				"type": "nvarchar",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "alpha-2",
+				"type": "nvarchar",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "alpha-3",
+				"type": "nvarchar",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "country-code",
+				"type": "nvarchar",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "iso_3166-2",
+				"type": "nvarchar",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "region",
+				"type": "nvarchar",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "sub-region",
+				"type": "nvarchar",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "intermediate-region",
+				"type": "nvarchar",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "region-code",
+				"type": "nvarchar",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "sub-region-code",
+				"type": "nvarchar",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "intermediate-region-code",
+				"type": "nvarchar",
+				"precision": 255,
+				"scale": 255
+			},
+			{
+				"name": "sysETLrunId",
+				"type": "int",
+				"precision": 10,
+				"scale": 255
+			},
+			{
+				"name": "sysCreatedAt",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "sysChangedAt",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "sysCreatedBy",
+				"type": "int",
+				"precision": 10,
+				"scale": 255
+			},
+			{
+				"name": "sysChangedBy",
+				"type": "int",
+				"precision": 10,
+				"scale": 255
+			}
+		],
+		"typeProperties": {
+			"tableName": "[staging].[Country_untyped]"
+		}
+	}
+}
