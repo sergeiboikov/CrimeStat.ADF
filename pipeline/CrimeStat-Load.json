@@ -11,7 +11,7 @@
 						"referenceName": "Source-Country-Load-Staging",
 						"type": "PipelineReference"
 					},
-					"waitOnCompletion": true
+					"waitOnCompletion": false
 				}
 			},
 			{
