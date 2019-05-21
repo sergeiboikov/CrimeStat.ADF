@@ -35,7 +35,7 @@
 				}
 			},
 			{
-				"name": "ExecutePipeline1",
+				"name": "Execute_Source-UNCrime-Load-Staging",
 				"description": "Execute the Source-UNCrime-Load-Staging pipeline",
 				"type": "ExecutePipeline",
 				"dependsOn": [
