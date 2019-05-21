@@ -1,5 +1,5 @@
 {
-	"name": "dataset_dst_Country_untyped",
+	"name": "dataset_dst_country_untyped",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "crimestatdwhlinkedservice",
