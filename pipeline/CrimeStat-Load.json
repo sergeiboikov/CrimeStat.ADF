@@ -15,10 +15,23 @@
 				}
 			},
 			{
-				"name": "Execute Pipeline1",
+				"name": "Execute Source-WBPopulation-Load-Staging",
+				"description": "Execute the Source-WBPopulation-Load-Staging pipeline",
 				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Execute Source-Country-Load-Staging",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"typeProperties": {
-					"waitOnCompletion": true
+					"pipeline": {
+						"referenceName": "Source_WBPopulation-Load-Staging",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": false
 				}
 			}
 		]
