@@ -36,12 +36,6 @@
 						"type": "TabularTranslator",
 						"mappings": [
 							{
-								"sink": {
-									"name": "FileName",
-									"type": "String"
-								}
-							},
-							{
 								"source": {
 									"name": "Region",
 									"type": "String"
