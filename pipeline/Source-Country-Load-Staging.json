@@ -159,13 +159,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "dataset_src_country",
+						"referenceName": "dataset_src_countries",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "dataset_dst_Country_untyped",
+						"referenceName": "dataset_staging_country_untyped",
 						"type": "DatasetReference"
 					}
 				]
