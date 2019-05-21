@@ -1,5 +1,5 @@
 {
-	"name": "dataset_staging_UNCrime_untyped",
+	"name": "dataset_staging_uncrime_untyped",
 	"properties": {
 		"description": "The table staging.UNCrime_untyped",
 		"linkedServiceName": {
