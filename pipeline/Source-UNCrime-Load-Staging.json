@@ -19,7 +19,9 @@
 						"type": "DelimitedTextSource",
 						"storeSettings": {
 							"type": "AzureBlobStorageReadSetting",
-							"wildcardFileName": "*.*"
+							"recursive": true,
+							"wildcardFileName": "*.csv",
+							"enablePartitionDiscovery": false
 						},
 						"formatSettings": {
 							"type": "DelimitedTextReadSetting"
@@ -29,7 +31,78 @@
 						"type": "AzureSqlSink",
 						"preCopyScript": "TRUNCATE TABLE staging.UNCrime_untyped"
 					},
-					"enableStaging": false
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"sink": {
+									"name": "FileName",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Region",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Region",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Sub Region",
+									"type": "String"
+								},
+								"sink": {
+									"name": "SubRegion",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Country",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Country",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Count",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Count",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Rate",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Rate",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Year",
+									"type": "String"
+								},
+								"sink": {
+									"name": "Year",
+									"type": "String"
+								}
+							}
+						]
+					}
 				},
 				"inputs": [
 					{
