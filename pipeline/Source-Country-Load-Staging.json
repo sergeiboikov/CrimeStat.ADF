@@ -5,7 +5,7 @@
 		"activities": [
 			{
 				"name": "copy-country-staging",
-				"description": "Copy data from source to staging",
+				"description": "Copy data from source (Country) to staging.Country_untyped",
 				"type": "Copy",
 				"policy": {
 					"timeout": "7.00:00:00",
@@ -38,7 +38,7 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
-						"preCopyScript": "TRUNCATE [staging].[Country_untyped];"
+						"preCopyScript": "TRUNCATE TABLE staging.Country_untyped;"
 					},
 					"enableStaging": false,
 					"translator": {
