@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Execute Source-Country-Load-Staging",
+				"name": "Execute_Source-Country-Load-Staging",
 				"description": "Execute the Source-Country-Load-Staging pipeline",
 				"type": "ExecutePipeline",
 				"typeProperties": {
@@ -20,7 +20,7 @@
 				"type": "ExecutePipeline",
 				"dependsOn": [
 					{
-						"activity": "Execute Source-Country-Load-Staging",
+						"activity": "Execute_Source-Country-Load-Staging",
 						"dependencyConditions": [
 							"Succeeded"
 						]
