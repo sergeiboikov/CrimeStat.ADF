@@ -1,0 +1,32 @@
+{
+	"name": "dataset_src_wb_population",
+	"properties": {
+		"description": "Source folder with WorldBank population files",
+		"linkedServiceName": {
+			"referenceName": "crimestatstacsblinkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "CrimeStat.Source.WorldBank",
+				"container": "crimestat-sourcefiles"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Data Source",
+				"type": "String"
+			},
+			{
+				"name": "World Development Indicators",
+				"type": "String"
+			}
+		]
+	}
+}
