@@ -4,12 +4,20 @@
 		"activities": [
 			{
 				"name": "Execute Source-Country-Load-Staging",
+				"description": "Execute the Source-Country-Load-Staging pipeline",
 				"type": "ExecutePipeline",
 				"typeProperties": {
 					"pipeline": {
 						"referenceName": "Source-Country-Load-Staging",
 						"type": "PipelineReference"
 					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Execute Pipeline1",
+				"type": "ExecutePipeline",
+				"typeProperties": {
 					"waitOnCompletion": true
 				}
 			}
