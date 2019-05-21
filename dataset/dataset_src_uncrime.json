@@ -1,0 +1,46 @@
+{
+	"name": "dataset_src_uncrime",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "crimestatstacsblinkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "CrimeStat.Source.UNCrime/ConvertedToCSV",
+				"container": "crimestat-sourcefiles"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Prop_0",
+				"type": "String"
+			},
+			{
+				"name": "Prop_1",
+				"type": "String"
+			},
+			{
+				"name": "Prop_2",
+				"type": "String"
+			},
+			{
+				"name": "Prop_3",
+				"type": "String"
+			},
+			{
+				"name": "Prop_4",
+				"type": "String"
+			},
+			{
+				"name": "Prop_5",
+				"type": "String"
+			}
+		]
+	}
+}
