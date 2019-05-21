@@ -15,12 +15,32 @@
 				}
 			},
 			{
-				"name": "Execute Source-WBPopulation-Load-Staging",
+				"name": "Execute_Source-WBPopulation-Load-Staging",
 				"description": "Execute the Source-WBPopulation-Load-Staging pipeline",
 				"type": "ExecutePipeline",
 				"dependsOn": [
 					{
 						"activity": "Execute Source-Country-Load-Staging",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "Source_WBPopulation-Load-Staging",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": false
+				}
+			},
+			{
+				"name": "ExecutePipeline1",
+				"description": "Execute the Source-UNCrime-Load-Staging pipeline",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Execute_Source-WBPopulation-Load-Staging",
 						"dependencyConditions": [
 							"Succeeded"
 						]
