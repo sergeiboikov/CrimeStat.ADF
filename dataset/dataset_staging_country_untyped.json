@@ -1,6 +1,7 @@
 {
 	"name": "dataset_staging_country_untyped",
 	"properties": {
+		"description": "The table staging.Country_untyped",
 		"linkedServiceName": {
 			"referenceName": "crimestatdwhlinkedservice",
 			"type": "LinkedServiceReference"
