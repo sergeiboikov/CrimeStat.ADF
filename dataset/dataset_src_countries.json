@@ -1,5 +1,5 @@
 {
-	"name": "dataset_src_country",
+	"name": "dataset_src_countries",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "crimestatstacsblinkedservice",
