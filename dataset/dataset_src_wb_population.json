@@ -10,7 +10,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"folderPath": "CrimeStat.Source.WorldBank/Prepared",
+				"folderPath": "CrimeStat.Source.WorldBank",
 				"container": "crimestat-sourcefiles"
 			},
 			"columnDelimiter": ",",
