@@ -1,0 +1,71 @@
+{
+	"name": "dataset_staging_UNCrime_untyped",
+	"properties": {
+		"description": "The table staging.UNCrime_untyped",
+		"linkedServiceName": {
+			"referenceName": "crimestatdwhlinkedservice",
+			"type": "LinkedServiceReference"
+		},
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "FileName",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Region",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SubRegion",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Country",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Count",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Rate",
+				"type": "nvarchar"
+			},
+			{
+				"name": "Year",
+				"type": "nvarchar"
+			},
+			{
+				"name": "sysETLrunId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sysCreatedAt",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "sysChangedAt",
+				"type": "datetime",
+				"precision": 23,
+				"scale": 3
+			},
+			{
+				"name": "sysCreatedBy",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "sysChangedBy",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"tableName": "[staging].[UNCrime_untyped]"
+		}
+	}
+}
