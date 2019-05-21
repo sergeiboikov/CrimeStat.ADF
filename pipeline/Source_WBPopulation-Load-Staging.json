@@ -665,36 +665,6 @@
 									"name": "2018",
 									"type": "String"
 								}
-							},
-							{
-								"sink": {
-									"name": "sysETLrunId",
-									"type": "Int32"
-								}
-							},
-							{
-								"sink": {
-									"name": "sysCreatedAt",
-									"type": "DateTime"
-								}
-							},
-							{
-								"sink": {
-									"name": "sysChangedAt",
-									"type": "DateTime"
-								}
-							},
-							{
-								"sink": {
-									"name": "sysCreatedBy",
-									"type": "Int32"
-								}
-							},
-							{
-								"sink": {
-									"name": "sysChangedBy",
-									"type": "Int32"
-								}
 							}
 						]
 					}
