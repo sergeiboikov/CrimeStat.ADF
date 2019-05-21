@@ -19,27 +19,27 @@
 		},
 		"schema": [
 			{
-				"name": "Prop_0",
+				"name": "Region",
 				"type": "String"
 			},
 			{
-				"name": "Prop_1",
+				"name": "Sub Region",
 				"type": "String"
 			},
 			{
-				"name": "Prop_2",
+				"name": "Country",
 				"type": "String"
 			},
 			{
-				"name": "Prop_3",
+				"name": "Count",
 				"type": "String"
 			},
 			{
-				"name": "Prop_4",
+				"name": "Rate",
 				"type": "String"
 			},
 			{
-				"name": "Prop_5",
+				"name": "Year",
 				"type": "String"
 			}
 		]
