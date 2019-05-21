@@ -1,0 +1,18 @@
+{
+	"name": "dataflow_processcountry",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "dataset_crimestatdwh_wb_population_pivoted",
+						"type": "DatasetReference"
+					},
+					"name": "source1",
+					"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tformat: 'table') ~> source1"
+				}
+			]
+		}
+	}
+}
