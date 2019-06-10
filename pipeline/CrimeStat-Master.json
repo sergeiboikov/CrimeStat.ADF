@@ -1,0 +1,6 @@
+{
+	"name": "CrimeStat-Master",
+	"properties": {
+		"description": "Run master package for CrimeStat etl"
+	}
+}
